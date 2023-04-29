@@ -5,15 +5,12 @@ import './style.css'
 import ReactDOM from 'react-dom'
 import { Canvas } from '@react-three/fiber'
 
+import App from './app'
+
 const root = ReactDOM.createRoot(document.querySelector('#root'))
 
 root.render(
-    <>
-        <Canvas>
-            <mesh>
-                <torusKnotGeometry />
-                <meshNormalMaterial />
-            </mesh>
-        </Canvas>
-    </>
+    <Canvas>
+        <App/>
+    </Canvas>
 )
