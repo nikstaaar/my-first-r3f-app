@@ -5,13 +5,17 @@ import { useRef } from "react"
 export default function App () 
 {
  const cubeRef = useRef()
+ const groupRef = useRef()
 
  useFrame((state, delta) => {
     cubeRef.current.rotation.y += delta
+    groupRef.current.rotation.y += delta * 0.25
+
  })
 
  return (
 <>
+<group ref={ groupRef }>
 <mesh position-x={ -2}>
     <sphereGeometry/>
     <meshBasicMaterial color="orange"/>
@@ -26,6 +30,7 @@ export default function App ()
     <planeGeometry/>
     <meshBasicMaterial color="greenyellow"/>
 </mesh>
+</group>
 </>
   )
 }
