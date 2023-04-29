@@ -2,6 +2,8 @@ import React from "react"
 import { useThree, extend, useFrame } from "@react-three/fiber"
 import { useRef } from "react"
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import CustomObject from "./customObject"
+
 
 extend ({ OrbitControls })
 
@@ -34,12 +36,14 @@ export default function App ()
      <boxGeometry scale={1.5}/>
      <meshStandardMaterial color={"mediumpurple"} wireframe={ true }/>
 </mesh>
+</group>
 
 <mesh position-y={-1} rotation-x={ - Math.PI * 0.5} scale ={10}>
     <planeGeometry/>
     <meshStandardMaterial color="greenyellow"/>
 </mesh>
-</group>
+
+<CustomObject/>
 </>
   )
 }
